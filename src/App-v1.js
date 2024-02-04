@@ -33,14 +33,18 @@ function convertToFlag(countryCode) {
 }
 
 class App extends React.Component {
-    state = { 
-        location : "Lisbon", 
-        isLoading: false, 
-        displayedLocation: "",
-        weather: {},
-    };
+    constructor(props) {
+        super(props);
+        this.state = { 
+            location : "Lisbon", 
+            isLoading: false, 
+            displayedLocation: "",
+            weather: {},
+        };
+        this.fetchWeather = this.fetchWeather.bind(this);
+    }
 
-   fetchWeather =  async () => {
+    async fetchWeather() {
         try {
             this.setState({ isLoading: true });
             // 1) Getting location (geocoding)
