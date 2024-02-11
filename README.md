@@ -1,2 +1,2 @@
 # classy-weather
-class based react app
+class components based react app
